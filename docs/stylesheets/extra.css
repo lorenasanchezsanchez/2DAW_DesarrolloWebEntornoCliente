@@ -28,3 +28,34 @@
 .pr-closed {
   color: #b60205;
 }
+
+.md-typeset h1.objetos-heading,
+.md-typeset h2.objetos-heading,
+.md-typeset h3.objetos-heading,
+.md-typeset h4.objetos-heading {
+  color: var(--md-primary-fg-color);
+  font-weight: 700;
+}
+
+.md-typeset h1.objetos-heading {
+  font-size: 2rem;
+}
+
+.md-typeset h2.objetos-heading {
+  font-size: 1.65rem;
+}
+
+.md-typeset h3.objetos-heading {
+  font-size: 1.35rem;
+}
+
+.md-typeset h4.objetos-heading {
+  font-size: 1.15rem;
+}
+
+
+:root  > * {
+  --md-primary-fg-color:        #2b9eaf;
+  --md-primary-fg-color--light: #5fbcce;
+  --md-primary-fg-color--dark:  #135e6d;
+}

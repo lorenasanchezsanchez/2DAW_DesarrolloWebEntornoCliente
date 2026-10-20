@@ -46,7 +46,7 @@ theme:
   # Palette toggle for light mode
   palette:
     - media: "(prefers-color-scheme: light)"
-      primary: 'pink'
+      primary: 'custom'
       scheme: default
       toggle:
         # icon: material/toggle-switch
@@ -55,7 +55,7 @@ theme:
 
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
-      primary: 'pink'
+      primary: 'custom'
       scheme: slate
       toggle:
         # icon: material/toggle-switch-off-outline
