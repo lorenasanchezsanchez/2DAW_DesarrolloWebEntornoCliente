@@ -121,6 +121,7 @@ El fitxer `overrides/partials/cover.html` controla el footer de la portada.
 Per afegir logos:
 
 ```html
+{% raw %}
 {% extends "partials/cover-base.html" %}
 
 {% block cover_footer %}
@@ -129,6 +130,7 @@ Per afegir logos:
     {% include "img/logo2.svg"%}
 </div>
 {% endblock %}
+{% endraw %}
 ```
 
 Pots col·locar els teus logos SVG a la carpeta `overrides/img/`.
