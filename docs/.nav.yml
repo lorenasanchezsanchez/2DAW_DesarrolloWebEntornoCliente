@@ -1,4 +1,5 @@
-nav:
+﻿nav:
+    - "Apuntes": apuntes
+    - "Actividades": activitats
+    - "Guia Docente": informacion.md
     - "*"
-    - "Apunts": apunts
-    - "Guia Docent": informacio.md

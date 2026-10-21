@@ -1,7 +1,6 @@
-nav:
-    - "*"
+﻿nav:
     - "Bloque 1: Introducción a JavaScript": 01_introduccion_javascript
     - "Bloque 2: Funciones y bucles": 02_funciones_bucles
     - "Bloque 3: Objetos": 03_objetos
     - "Bloque 4: Arrays": 04_arrays
-   
+    
