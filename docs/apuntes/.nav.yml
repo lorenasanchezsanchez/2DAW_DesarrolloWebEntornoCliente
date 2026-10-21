@@ -1,6 +1,8 @@
 ﻿nav:
-    - "Bloque 1: Introducción a JavaScript": 01_introduccion_javascript
-    - "Bloque 2: Funciones y bucles": 02_funciones_bucles
-    - "Bloque 3: Objetos": 03_objetos
-    - "Bloque 4: Arrays": 04_arrays
-    
+    - "Bloque 1: JavaScript": 
+        - "UD1 Introducción a JavaScript":  B1_Javascript/01_introduccion_javascript
+        - "UD2 Funciones y bucles":  B1_Javascript/02_funciones_bucles
+        - "UD3 Objetos":  B1_Javascript/03_objetos
+        - "UD4: Arrays":  B1_Javascript/04_arrays
+        - "UD5: Error handling":  B1_Javascript/05_error_handling
+        - "UD6: Promesas Async/Await":  B1_Javascript/06_promesas_async_await

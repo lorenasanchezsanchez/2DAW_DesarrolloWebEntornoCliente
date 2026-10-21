@@ -1,0 +1,36 @@
+﻿nav:
+    - "Bloque 1: Introducción a JavaScript":
+        - "Actividades": B1_Javascript/01_introduccion_javascript/01_act_introduccion.md
+        - "Soluciones": B1_Javascript/01_introduccion_javascript/01_sol_act_introduccion.md
+    - "Bloque 2: Funciones y bucles":
+        - "Actividades": B1_Javascript/02_funciones_bucles/02_act_funciones_bucles.md
+        - "Soluciones": B1_Javascript/02_funciones_bucles/02_sol_act_funciones_bucles.md
+
+   # - "Bloque 3: Objetos":
+   #     - "Actividades": B1_Javascript/03_objetos/03_act_objetos.md
+   #     - "Soluciones": B1_Javascript/03_objetos/03_sol_act_objetos.mdº
+   # - "Bloque 4: Arrays":
+   #     - "Actividades": B1_Javascript/04_arrays/04_act_arrays.md
+   #     - "Soluciones": B1_Javascript/04_arrays/04_sol_act_arrays.md
+   # - "Bloque 5: Error handling":
+   #     - "Actividad 1": B1_Javascript/05_error_handling/05_act1.md
+   #     - "Soluciones Actividad 1": B1_Javascript/05_error_handling/05_sol_act1.md
+   #     - "Actividad 2": B1_Javascript/05_error_handling/05_act2.md
+   #     - "Soluciones Actividad 2": B1_Javascript/05_error_handling/05_sol_act2.md
+    - "Bloque 6: Promesas Async/Await":
+        - "Actividad 1": B1_Javascript/06_promesas_async_await/06_act1.md
+       # - "Soluciones Actividad 1": B1_Javascript/06_promesas_async_await/06_sol_act1.md
+        - "Actividad 2": B1_Javascript/06_promesas_async_await/06_act2.md
+       # - "Soluciones Actividad 2": B1_Javascript/06_promesas_async_await/06_sol_act2.md
+        - "Actividad 3": B1_Javascript/06_promesas_async_await/06_act3.md
+       # - "Soluciones Actividad 3": B1_Javascript/06_promesas_async_await/06_sol_act3.md
+        - "Actividad 4": B1_Javascript/06_promesas_async_await/06_act4.md
+       # - "Soluciones Actividad 4": B1_Javascript/06_promesas_async_await/06_sol_act4.md
+        - "Actividad 5": B1_Javascript/06_promesas_async_await/06_act5.md
+       # - "Soluciones Actividad 5": B1_Javascript/06_promesas_async_await/06_sol_act5.md
+        - "Actividad 6": B1_Javascript/06_promesas_async_await/06_act6.md
+       # - "Soluciones Actividad 6": B1_Javascript/06_promesas_async_await/06_sol_act6.md
+        - "Actividad 7": B1_Javascript/06_promesas_async_await/06_act7.md
+       # - "Soluciones Actividad 7": B1_Javascript/06_promesas_async_await/06_sol_act7.md
+  
+

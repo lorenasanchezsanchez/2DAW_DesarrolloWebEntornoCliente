@@ -1,9 +1,0 @@
-﻿nav:
-    - "Bloque 1: Introducción a JavaScript":
-        - "Actividades": 01/01_act_introduccion.md
-        - "Soluciones": 01/01_sol_act_introduccion.md
-    - "Bloque 2: Funciones y bucles":
-        - "Actividades": 02_funciones_bucles/02_act_funciones_bucles.md
-        - "Soluciones": 02_funciones_bucles/02_sol_act_funciones_bucles.md
-    - "*"
-
