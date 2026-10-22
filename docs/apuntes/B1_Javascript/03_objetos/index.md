@@ -77,26 +77,6 @@ La notación de punto no puede ser usada de manera similar:
 
 ## Propiedades calculadas {.objetos-heading}
 
-Podemos usar corchetes en un objeto literal al crear un objeto. A esto se le llama propiedades calculadas. Por ejemplo:
-
-![](imagenes/UD23%20-%20Objetos_13.jpg)
-
-El significado de una propiedad calculada es simple: [fruit] significa que se debe tomar la clave de la propiedad fruit. Entonces, si un visitante ingresa "apple", bag se convertirá en {apple: 5}. Esencialmente esto funciona igual que:
-
-![](imagenes/UD23%20-%20Objetos_14.jpg)
-
-Podemos usar expresiones más complejas dentro de los corchetes:
-
-![](imagenes/UD23%20-%20Objetos_15.png)
-
-Los corchetes son mucho más potentes que la notación de punto. Permiten cualquier nombre de propiedad, incluso variables. Pero también es más engorroso escribirlos. Entonces, la mayoría de las veces, cuando los nombres de propiedad son conocidos y simples, se utiliza el punto. Y si necesitamos algo más complejo, entonces cambiamos a corchetes.
-
-
-
-
-# Propiedades Calculadas en JavaScript
-
-## Guía Completa
 
 Las propiedades calculadas (*Computed Properties*) permiten generar el nombre de una propiedad dinámicamente utilizando una expresión.
 
@@ -116,7 +96,7 @@ Resultado:
 
 ---
 
-# Problema que Resuelven
+### Problema que Resuelven
 
 Sin propiedades calculadas debes conocer el nombre de la propiedad al escribir el código.
 
@@ -130,7 +110,7 @@ const usuario = {
 
 ---
 
-# Sintaxis
+### Sintaxis
 
 ```javascript
 const clave = 'nombre';
@@ -146,7 +126,7 @@ El resultado se convierte en el nombre de la propiedad.
 
 ---
 
-# Sin Corchetes
+### Sin Corchetes
 
 ```javascript
 const clave = 'nombre';
@@ -168,7 +148,7 @@ La propiedad se llama literalmente "clave".
 
 ---
 
-# Con Corchetes
+###  Con Corchetes
 
 ```javascript
 const clave = 'nombre';
@@ -188,7 +168,7 @@ Resultado:
 
 ---
 
-# Qué Ocurre Internamente
+### Qué Ocurre Internamente
 
 ```javascript
 const clave = 'nombre';
@@ -220,7 +200,7 @@ Y crea:
 
 ---
 
-# Expresiones Complejas
+### Expresiones Complejas
 
 Dentro de los corchetes puede haber cualquier expresión válida.
 
@@ -242,7 +222,7 @@ Resultado:
 
 ---
 
-# Uso con Template Strings
+### Uso con Template Strings
 
 ```javascript
 const id = 25;
@@ -262,7 +242,7 @@ Resultado:
 
 ---
 
-# Varias Propiedades Dinámicas
+### Varias Propiedades Dinámicas
 
 ```javascript
 const campo1 = 'nombre';
@@ -285,7 +265,7 @@ Resultado:
 
 ---
 
-# Claves Numéricas
+### Claves Numéricas
 
 ```javascript
 const numero = 100;
@@ -307,7 +287,7 @@ Las claves de los objetos siempre son cadenas o símbolos.
 
 ---
 
-# Uso con Symbols
+###  Uso con Symbols
 
 ```javascript
 const id = Symbol('id');
@@ -321,7 +301,7 @@ Los símbolos generan propiedades únicas.
 
 ---
 
-# Formularios
+### Formularios
 
 Muy utilizado para capturar cambios de campos.
 
@@ -344,7 +324,7 @@ Resultado:
 
 ---
 
-# React: Caso Real
+### React: Caso Real
 
 ```javascript
 setUsuario({
@@ -367,7 +347,7 @@ usuario.email
 
 ---
 
-# Configuración Dinámica
+### Configuración Dinámica
 
 ```javascript
 const entorno = 'produccion';
@@ -387,7 +367,7 @@ Resultado:
 
 ---
 
-# Combinación con Spread
+### Combinación con Spread
 
 ```javascript
 const clave = 'edad';
@@ -409,9 +389,9 @@ Resultado:
 
 ---
 
-# Errores Comunes
+###  Errores Comunes
 
-## Error 1
+#### Error 1
 
 ```javascript
 const clave = 'nombre';
@@ -427,7 +407,7 @@ Crea la propiedad clave.
 
 ---
 
-# Error 2
+#### Error 2
 
 ```javascript
 const obj = {
@@ -447,7 +427,7 @@ Comprueba siempre el contenido de la variable.
 
 ---
 
-# Diferencia entre Crear y Acceder
+### Diferencia entre Crear y Acceder
 
 Crear:
 
@@ -473,7 +453,7 @@ Resultado:
 
 ---
 
-# Regla de Oro
+### Regla de Oro
 
 Sin corchetes:
 
@@ -501,18 +481,13 @@ La propiedad se llama como el valor almacenado en la variable.
 
 ---
 
-# Resumen Final
+### Resumen Final
 
 ✅ Permiten crear propiedades dinámicas.
-
 ✅ Utilizan la sintaxis `[expresion]`.
-
 ✅ La expresión se evalúa antes de crear la propiedad.
-
 ✅ Se usan mucho en React y formularios.
-
 ✅ Admiten variables, concatenaciones, template strings y símbolos.
-
 ✅ Son una característica fundamental para construir objetos de manera flexible.
 
 
@@ -575,7 +550,7 @@ console.log(persona.__proto__);
 
 ---
 
-# La cadena de prototipos
+## La cadena de prototipos
 
 Cuando accedes a una propiedad:
 
@@ -594,7 +569,7 @@ Esto se llama **Prototype Chain**.
 
 ---
 
-# Ejemplo sencillo
+## Ejemplo sencillo
 
 ```javascript
 const animal = {
@@ -622,7 +597,7 @@ Aunque `perro` no tiene el método `respirar`, lo encuentra en su prototipo.
 
 ---
 
-# Qué ocurre internamente
+## Qué ocurre internamente
 
 ```javascript
 perro.respirar()
@@ -650,7 +625,7 @@ animal.respirar
 
 ---
 
-# Todos los objetos tienen prototipo
+## Todos los objetos tienen prototipo
 
 ```javascript
 const obj = {};
@@ -673,7 +648,7 @@ obj.hasOwnProperty('x');
 
 ---
 
-# Object.prototype
+## Object.prototype
 
 Es el prototipo base de casi todos los objetos.
 
@@ -691,7 +666,7 @@ true
 
 ---
 
-# ¿Por qué no se recomienda usar __proto__?
+## ¿Por qué no se recomienda usar __proto__?
 
 Aunque funciona, hoy se considera una API heredada.
 
@@ -713,7 +688,7 @@ Para modificarlo.
 
 ---
 
-# Equivalencias
+## Equivalencias
 
 Obtener prototipo:
 
@@ -743,7 +718,7 @@ Object.setPrototypeOf(obj, animal);
 
 ---
 
-# Funciones y prototipos
+## Funciones y prototipos
 
 Las funciones constructoras tienen una propiedad especial:
 
@@ -761,7 +736,7 @@ obj.__proto__
 
 ---
 
-# Diferencia importante
+## Diferencia importante
 
 ```javascript
 Persona.prototype
@@ -779,7 +754,7 @@ Es el prototipo real de esa instancia.
 
 ---
 
-# Ejemplo
+## Ejemplo
 
 ```javascript
 function Persona() {}
@@ -797,16 +772,12 @@ true
 
 ---
 
-# Resumen
+## Resumen
 
 ✅ `__proto__` apunta al prototipo de un objeto.
-
 ✅ Permite la herencia prototípica.
-
 ✅ JavaScript busca propiedades recorriendo la cadena de prototipos.
-
 ✅ Todos los objetos suelen heredar de `Object.prototype`.
-
 ✅ Actualmente es preferible usar:
 
 ```javascript
@@ -881,37 +852,32 @@ Entonces, para solucionar el problema con los códigos telefónicos, podemos “
 
 ![](imagenes/UD23%20-%20Objetos_31.png)
 
-# RESUMEN {.objetos-heading}
+## RESUMEN {.objetos-heading}
 
 Los objetos son arreglos asociativos con varias características especiales. Almacenan propiedades (pares   de clave-valor), donde:
 
-Las claves de propiedad deben ser cadenas o símbolos (generalmente strings).
+- Las claves de propiedad deben ser cadenas o símbolos (generalmente strings).
 
-Los valores pueden ser de cualquier tipo.
+- Los valores pueden ser de cualquier tipo.
 
 Para acceder a una propiedad, podemos usar:
 
-La notación de punto: obj.property.
+- La notación de punto: obj.property.
 
-La notación de corchetes obj["property"]. Los corchetes permiten tomar la clave de una variable, como obj[varWithKey].
+- La notación de corchetes obj["property"]. Los corchetes permiten tomar la clave de una variable, como obj[varWithKey].
 
 Operadores adicionales:
 
-Para eliminar una propiedad: delete obj.prop.
-
-Para comprobar si existe una propiedad con la clave proporcionada: "key" in obj.
-
-Para crear bucles sobre un objeto: bucle for (let key in obj).
-
-Lo que hemos estudiado en este capítulo se llama “objeto simple”, o solamente Object.
+- Para eliminar una propiedad: delete obj.prop.
+- Para comprobar si existe una propiedad con la clave proporcionada: "key" in obj.
+- Para crear bucles sobre un objeto: bucle for (let key in obj).
+- Lo que hemos estudiado en este capítulo se llama “objeto simple”, o solamente Object.
 
 Hay muchos otros tipos de objetos en JavaScript:
 
-Array para almacenar colecciones de datos ordenados,
-
-Date para almacenar la información sobre fecha y hora,
-
-Error para almacenar información sobre un error.
+- Array para almacenar colecciones de datos ordenados,
+- Date para almacenar la información sobre fecha y hora,
+- Error para almacenar información sobre un error.
 
 Tienen sus características especiales que estudiaremos más adelante. A veces las personas dicen algo como “Tipo array" o "Tipo date", pero formalmente no son tipos en sí, sino que pertenecen a un tipo de datos de “objeto” simple y lo amplían a varias maneras.
 
@@ -1112,7 +1078,7 @@ Como puedes ver, clone.me hace referencia a clone, no a user! Así que la refere
 
 Las propiedades de función no están soportadas. Para manejar estos casos complejos podemos necesitar una combinación de métodos de clonación, escribir código personalizado o, para no reinventar la rueda, tomar una implementación existente, por ejemplo _.cloneDeep(obj) de la librería JavaScript lodash.
 
-# RESUMEN {.objetos-heading}
+## RESUMEN {.objetos-heading}
 
 Los objetos son asignados y copiados por referencia. En otras palabras, una variable almacena no el valor del objeto sino una referencia (la dirección en la memoria) del valor. Entonces, copiar tal variable o pasarla como argumento de función copia la referencia, no el objeto.
 
@@ -1181,7 +1147,7 @@ Las funciones de flecha son especiales: ellas no tienen su “propio” this. Si
 
 Esto es una característica especial de las funciones de flecha, útil cuando no queremos realmente un this separado sino tomarlo de un contexto externo. Más adelante en el capítulo Funciones de flecha revisadas las trataremos en profundidad.
 
-# RESUMEN {.objetos-heading}
+## RESUMEN {.objetos-heading}
 
 
 
@@ -1366,7 +1332,7 @@ Por supuesto podemos agregar a this no sólo propiedades, sino también métodos
 
 Para crear objetos complejos existe una sintaxis más avanzada, classes.
 
-# RESUMEN {.objetos-heading}
+## RESUMEN {.objetos-heading}
 
 Las funciones Constructoras o, más corto, constructores, son funciones normales, pero existe un común acuerdo para nombrarlas con la primera letra en mayúscula.
 
@@ -1536,7 +1502,7 @@ También podemos usar ?. con delete:
 
 ![](imagenes/UD23%20-%20Objetos_77.jpg)
 
-# RESUMEN {.objetos-heading}
+## RESUMEN {.objetos-heading}
 
 La sintaxis de encadenamiento opcional ?. tiene tres formas:
 
