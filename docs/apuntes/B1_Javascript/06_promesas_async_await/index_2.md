@@ -4,7 +4,7 @@
 
 <span style="color:#404040">loadScript\(src\)\,</span>
 
-![](imagenes%5Cud26_0.png)
+![](imagenes/ud26_0.png)
 
 <span style="color:#000000">Esto inserta en el documento una etiqueta nueva\, creada dinámicamente\, \<script src =" \.\.\. "> </span>
 
@@ -12,7 +12,7 @@
 
 <span style="color:#000000">la carga se completa\. Podemos usar esta función así: </span>
 
-![](imagenes%5Cud26_1.png)
+![](imagenes/ud26_1.png)
 
 <span style="color:#000000">El script se ejecuta “asincrónicamente”\, ya que </span>
 
@@ -22,7 +22,7 @@
 
 <span style="color:#000000">finalice la carga del script\. </span>
 
-![](imagenes%5Cud26_2.png)
+![](imagenes/ud26_2.png)
 
 <span style="color:#000000">Digamos que necesitamos usar el nuevo script tan pronto como se cargue\. Este script declara </span>
 
@@ -30,7 +30,7 @@
 
 <span style="color:#000000">loadScript \(\.\.\.\)\, no funcionarán: </span>
 
-![](imagenes%5Cud26_3.png)
+![](imagenes/ud26_3.png)
 
 <span style="color:#000000">Es natural\, porque el navegador no tuvo tiempo de cargar el script\. Hasta el momento\, la </span>
 
@@ -44,19 +44,19 @@
 
 <span style="color:#000000">se completa la carga el script: </span>
 
-![](imagenes%5Cud26_4.png)
+![](imagenes/ud26_4.png)
 
 <span style="color:#000000">básicamente ejecuta una función después de que el script fue cargado y ejecutado\. </span>
 
 <span style="color:#000000">Ahora\, si queremos llamar las nuevas funciones desde el script\, lo hacemos dentro de la callback: </span>
 
-![](imagenes%5Cud26_5.png)
+![](imagenes/ud26_5.png)
 
 <span style="color:#000000">Esa es la idea: el segundo argumento es una función \(generalmente anónima\) que se ejecuta </span>
 
 <span style="color:#000000">cuando se completa la acción\. Aquí un ejemplo ejecutable con un script real: </span>
 
-![](imagenes%5Cud26_6.png)
+![](imagenes/ud26_6.png)
 
 <span style="color:#000000">Eso se llama programación asincrónica “basado en callback”\. Una función que hace algo de </span>
 
@@ -72,11 +72,11 @@
 
 <span style="color:#000000">cargarse el primero? La solución natural sería poner la segunda llamada loadScript dentro de la </span>
 
-![](imagenes%5Cud26_7.png)
+![](imagenes/ud26_7.png)
 
 <span style="color:#000000">queremos un script más …?</span>
 
-![](imagenes%5Cud26_8.png)
+![](imagenes/ud26_8.png)
 
 <span style="color:#000000">acciones\, pero no en todos los casos; así que pronto veremos otras variantes\. </span>
 
@@ -88,11 +88,11 @@
 
 <span style="color:#000000">que monitorea los errores de carga: </span>
 
-![](imagenes%5Cud26_9.png)
+![](imagenes/ud26_9.png)
 
 <span style="color:#000000">Para una carga exitosa llama a callback\(null\, script\) y de lo contrario a callback\(error\)\. El uso: </span>
 
-![](imagenes%5Cud26_10.png)
+![](imagenes/ud26_10.png)
 
 <span style="color:#000000">conoce como “error first callback” \(callback con el error primero\)\.</span>
 
@@ -116,7 +116,7 @@
 
 <span style="color:#000000">tras otra\, tendremos un código como este: </span>
 
-![](imagenes%5Cud26_11.png)
+![](imagenes/ud26_11.png)
 
 <span style="color:#000000">En el código de arriba: </span>
 
@@ -134,7 +134,7 @@
 
 <span style="color:#000000">infernal” \(“callback hell”\, “pyramid of doom”\)\.</span>
 
-![](imagenes%5Cud26_12.png)
+![](imagenes/ud26_12.png)
 
 <span style="color:#000000">La “pirámide” de llamadas anidadas crece hacia la derecha con cada acción asincrónica\. Pronto </span>
 
@@ -144,7 +144,7 @@
 
 <span style="color:#000000">haciendo\, para cada acción\, una función independiente: </span>
 
-![](imagenes%5Cud26_13.png)
+![](imagenes/ud26_13.png)
 
 <span style="color:#000000">¿Lo Ves? Hace lo mismo\, y ahora no hay anidamiento profundo porque convertimos cada acción </span>
 
@@ -158,7 +158,7 @@
 
 <span style="color:#000000">abarrotados aquí\. </span>
 
-![](imagenes%5Cud26_14.png)
+![](imagenes/ud26_14.png)
 
 <span style="color:#000000">Más adelante veremos cómo los “fanáticos” pueden suscribirse a estos cambios\.</span>
 
@@ -168,7 +168,7 @@
 
 <span style="color:#000000">de setTimeout\): </span>
 
-![](imagenes%5Cud26_15.png)
+![](imagenes/ud26_15.png)
 
 <span style="color:#000000">Podemos ver dos cosas al ejecutar el código anterior: </span>
 
@@ -184,17 +184,17 @@
 
 <span style="color:#000000">producir el resultado\. Esto cambia el estado del objeto promise: </span>
 
-![](imagenes%5Cud26_16.png)
+![](imagenes/ud26_16.png)
 
 <span style="color:#000000">ejemplo de finalización exitosa de la tarea\, una “promesa cumplida”\. Y ahora un </span>
 
 <span style="color:#000000">ejemplo del ejecutor rechazando la promesa con un error: </span>
 
-![](imagenes%5Cud26_17.png)
+![](imagenes/ud26_17.png)
 
 <span style="color:#000000">La llamada a reject\(\.\.\.\) mueve el objeto promise al estado "rechazado": </span>
 
-![](imagenes%5Cud26_18.png)
+![](imagenes/ud26_18.png)
 
 <span style="color:#000000">Para resumir\, el ejecutor debe realizar una tarea \(generalmente algo que toma tiempo\) y luego </span>
 
@@ -210,7 +210,7 @@
 
 <span style="color:#000000">El más importante y fundamental es “\.then”\. La sintaxis es:</span>
 
-![](imagenes%5Cud26_19.png)
+![](imagenes/ud26_19.png)
 
 <span style="color:#000000">El primer argumento de “\.then” es una función que se ejecuta cuando se resuelve la promesa y </span>
 
@@ -224,15 +224,15 @@
 
 <span style="color:#000000">Por ejemplo\, aquí hay una reacción a una promesa resuelta con éxito: </span>
 
-![](imagenes%5Cud26_20.png)
+![](imagenes/ud26_20.png)
 
 <span style="color:#000000">La primera función fue ejecutada\. Y en el caso de un rechazo\, el segundo: </span>
 
-![](imagenes%5Cud26_21.png)
+![](imagenes/ud26_21.png)
 
 <span style="color:#000000">argumento de función para </span>
 
-![](imagenes%5Cud26_22.png)
+![](imagenes/ud26_22.png)
 
 <span style="color:#000000">\.then\(null\, errorHandlingFunction\)</span>
 
@@ -242,7 +242,7 @@
 
 <span style="color:#000000">exactamente lo mismo: </span>
 
-![](imagenes%5Cud26_23.png)
+![](imagenes/ud26_23.png)
 
 <span style="color:#000000"> __LIMPIEZA: FINALLY __ </span>
 
@@ -264,7 +264,7 @@
 
 <span style="color:#000000">código puede verse como esto: </span>
 
-![](imagenes%5Cud26_24.png)
+![](imagenes/ud26_24.png)
 
 <span style="color:#000000">Sin embargo\, note que finally\(f\) no es exactamente un alias dethen\(f\, f\)\`\. </span>
 
@@ -282,7 +282,7 @@
 
 <span style="color:#000000">then que le sigue: </span>
 
-![](imagenes%5Cud26_25.png)
+![](imagenes/ud26_25.png)
 
 <span style="color:#000000">Como puedes ver\, el “valor” devuelto por la primera promesa es pasado a través de </span>
 
@@ -296,7 +296,7 @@
 
 <span style="color:#000000">de finally a catch: </span>
 
-![](imagenes%5Cud26_26.png)
+![](imagenes/ud26_26.png)
 
 <span style="color:#000000">ignorado silenciosamente\. </span>
 
@@ -328,7 +328,7 @@
 
 <span style="color:#000000">script\. Esta es la variante basada callback\, solo para recordarnos: </span>
 
-![](imagenes%5Cud26_27.png)
+![](imagenes/ud26_27.png)
 
 <span style="color:#000000">Reescribámoslo usando Promesas\. </span>
 
@@ -336,19 +336,19 @@
 
 <span style="color:#000000">manejadores \(funciones de suscripción\) usando \.then: </span>
 
-![](imagenes%5Cud26_28.png)
+![](imagenes/ud26_28.png)
 
-![](imagenes%5Cud26_29.png)
+![](imagenes/ud26_29.png)
 
 <span style="color:#000000">Podemos ver inmediatamente algunos beneficios sobre el patrón basado en callback: </span>
 
-![](imagenes%5Cud26_30.png)
+![](imagenes/ud26_30.png)
 
 <span style="color:#262626">Encadenamiento de Promesa</span>
 
 <span style="color:#000000">encadenamiento de promesas\. Se ve así: </span>
 
-![](imagenes%5Cud26_31.png)
+![](imagenes/ud26_31.png)
 
 <span style="color:#000000">La idea es que el resultado pase a través de la cadena de manejadores “\.then”\.</span>
 
@@ -368,7 +368,7 @@
 
 <span style="color:#000000">secuencia de llamadas de alerta: 1 → 2 → 4\.</span>
 
-![](imagenes%5Cud26_32.png)
+![](imagenes/ud26_32.png)
 
 <span style="color:#000000">Todo funciona\, porque cada llamada a promise\.then devuelve una nueva promesa\, para que </span>
 
@@ -380,7 +380,7 @@
 
 <span style="color:#000000">sola promesa: eso no es encadenamiento\. Por ejemplo: </span>
 
-![](imagenes%5Cud26_33.png)
+![](imagenes/ud26_33.png)
 
 <span style="color:#000000">Lo que hicimos aquí fue añadir varios controladores a una sola promesa\. No se pasan el resultado </span>
 
@@ -388,7 +388,7 @@
 
 <span style="color:#000000">con el encadenamiento anterior\): </span>
 
-![](imagenes%5Cud26_34.png)
+![](imagenes/ud26_34.png)
 
 <span style="color:#000000">promesa\. Entonces\, en el código sobre todo alert muestra lo mismo: 1\. En la práctica\, rara vez </span>
 
@@ -402,7 +402,7 @@
 
 <span style="color:#000000">obtienen su resultado\. Por ejemplo: </span>
 
-![](imagenes%5Cud26_35.png)
+![](imagenes/ud26_35.png)
 
 <span style="color:#000000">En este código e</span>
 
@@ -426,11 +426,11 @@
 
 <span style="color:#000000">los scripts uno por uno\, en secuencia: </span>
 
-![](imagenes%5Cud26_36.png)
+![](imagenes/ud26_36.png)
 
 <span style="color:#000000">Este código se puede acortar un poco con las funciones de flecha: </span>
 
-![](imagenes%5Cud26_37.png)
+![](imagenes/ud26_37.png)
 
 <span style="color:#000000">Aquí cada llamada a loadScript devuelve una promesa\, y el sig</span>
 
@@ -444,7 +444,7 @@
 
 <span style="color:#000000">Técnicamente\, podríamos agregar “\.then” directamente a cada loadScript\, así:</span>
 
-![](imagenes%5Cud26_38.png)
+![](imagenes/ud26_38.png)
 
 <span style="color:#000000">Este código hace lo mismo: carga 3 scripts en secuencia\. Pero “crece hacia la derecha”\. Entonces </span>
 
@@ -472,7 +472,7 @@
 
 <span style="color:#000000">básica es bastante simple: </span>
 
-![](imagenes%5Cud26_39.png)
+![](imagenes/ud26_39.png)
 
 <span style="color:#000000">Esto hace una solicitud de red a la url y devuelve una promesa\. La promesa se resuelve con un </span>
 
@@ -486,7 +486,7 @@
 
 <span style="color:#000000">texto como resultado\. El siguiente código hace una solicitud a user\.json y carga su texto desde </span>
 
-![](imagenes%5Cud26_40.png)
+![](imagenes/ud26_40.png)
 
 <span style="color:#000000">El objeto response devuelto por fetch también incluye el método response\.json\(\) que lee los </span>
 
@@ -494,13 +494,13 @@
 
 <span style="color:#000000">pasemos a ello\. También usaremos las funciones de flecha por brevedad: </span>
 
-![](imagenes%5Cud26_41.png)
+![](imagenes/ud26_41.png)
 
 <span style="color:#000000">Ahora hagamos algo con el usuario cargado\. Por ejemplo\, podemos hacer una solicitud más a </span>
 
 <span style="color:#000000">GitHub\, cargar el perfil de usuario y mostrar el avatar: </span>
 
-![](imagenes%5Cud26_42.png)
+![](imagenes/ud26_42.png)
 
 <span style="color:#000000">El código funciona; ver comentarios sobre los detalles\. Sin embargo\, hay un problema potencial\, </span>
 
@@ -514,7 +514,7 @@
 
 <span style="color:#000000">avatar termine de mostrarse\. Como esto: </span>
 
-![](imagenes%5Cud26_43.png)
+![](imagenes/ud26_43.png)
 
 <span style="color:#000000">Es decir\, el controlador “\.then” en la línea \(\*\) ahor</span>
 
@@ -530,7 +530,7 @@
 
 <span style="color:#000000">posible que la necesitemos más adelante\. Finalmente\, podemos dividir el código en funciones </span>
 
-![](imagenes%5Cud26_44.png)
+![](imagenes/ud26_44.png)
 
 <span style="color:#404040">Si un controlador “\.</span>
 
@@ -542,7 +542,7 @@
 
 <span style="color:#404040">más allá\. Aquí hay una imagen completa:</span>
 
-![](imagenes%5Cud26_45.jpg)
+![](imagenes/ud26_45.jpg)
 
 <span style="color:#262626">Manejo de errores con promesas</span>
 
@@ -554,7 +554,7 @@
 
 <span style="color:#000000">sitio\) y al ser rechazada “\.catch” maneja el error:</span>
 
-![](imagenes%5Cud26_46.png)
+![](imagenes/ud26_46.png)
 
 <span style="color:#000000">Como puedes ver\, el </span>
 
@@ -568,7 +568,7 @@
 
 <span style="color:#000000"> al final de la cadena de </span>
 
-![](imagenes%5Cud26_47.png)
+![](imagenes/ud26_47.png)
 
 <span style="color:#000000"> _try…catch implícito_ </span>
 
@@ -576,11 +576,11 @@
 
 <span style="color:#000000">Por ejemplo\, este código: </span>
 
-![](imagenes%5Cud26_48.png)
+![](imagenes/ud26_48.png)
 
 <span style="color:#000000">…Hace exactamente lo mismo que este:</span>
 
-![](imagenes%5Cud26_49.png)
+![](imagenes/ud26_49.png)
 
 <span style="color:#000000">El "try\.\.catch invisible" embebido en el ejecutor detecta automáticamente el error y lo convierte </span>
 
@@ -594,13 +594,13 @@
 
 <span style="color:#000000">salta al manejador de errores más cercano\. Por ejemplo: </span>
 
-![](imagenes%5Cud26_50.png)
+![](imagenes/ud26_50.png)
 
 <span style="color:#000000">Esto sucede con todos los errores\, no solo los causados por la sentencia de excepción throw\. Por </span>
 
 <span style="color:#000000">ejemplo\, un error de programación: </span>
 
-![](imagenes%5Cud26_51.png)
+![](imagenes/ud26_51.png)
 
 <span style="color:#000000"> del final no solo detecta rechazos explícitos\, sino también los errores accidentales en </span>
 
@@ -624,7 +624,7 @@
 
 <span style="color:#000000">manejador “\.then” exitoso\. En el ejemplo de abajo\, el “\.catch” maneja el error de forma exitosa:</span>
 
-![](imagenes%5Cud26_52.png)
+![](imagenes/ud26_52.png)
 
 <span style="color:#000000">Aquí el “\.catch” termina de forma correcta\. Entonces se ejecuta el siguiente manejador exitoso </span>
 
@@ -634,7 +634,7 @@
 
 <span style="color:#000000">por lo que lo lanza nuevamente: </span>
 
-![](imagenes%5Cud26_53.png)
+![](imagenes/ud26_53.png)
 
 <span style="color:#000000">La ejecución salta del primer </span>
 
@@ -646,7 +646,7 @@
 
 <span style="color:#000000">final de una cadena de promesas\, como aquí: </span>
 
-![](imagenes%5Cud26_54.png)
+![](imagenes/ud26_54.png)
 
 <span style="color:#000000">En caso de que se genere un error\, la promesa se rechaza y la ejecución salta al manejador de </span>
 
@@ -666,7 +666,7 @@
 
 <span style="color:#000000">tales errores usando el evento unhandledrejection: </span>
 
-![](imagenes%5Cud26_55.png)
+![](imagenes/ud26_55.png)
 
 <span style="color:#000000">Si se produce un error\, y no hay un “\.catch”\, se dispara unhandledrejection\, y se obtiene el </span>
 
@@ -692,7 +692,7 @@
 
 <span style="color:#000000">finalicen\. Para ello es Promise\.all\. La sintaxis es: </span>
 
-![](imagenes%5Cud26_56.png)
+![](imagenes/ud26_56.png)
 
 <span style="color:#000000">Promise\.all toma un iterable \(usualmente un array de promesas\) y devuelve una nueva </span>
 
@@ -702,7 +702,7 @@
 
 <span style="color:#000000">después de 3 segundos\, y su resultado es un array \[1\, 2\, 3\]: </span>
 
-![](imagenes%5Cud26_57.png)
+![](imagenes/ud26_57.png)
 
 <span style="color:#000000">Ten en cuenta que el orden de los miembros del array es el mismo que el de las promesas que </span>
 
@@ -712,17 +712,17 @@
 
 <span style="color:#000000">podemos usar fetch en todos ellos así: </span>
 
-![](imagenes%5Cud26_58.png)
+![](imagenes/ud26_58.png)
 
 <span style="color:#000000">Un mayor ejemplo con fetch: la búsqueda de información de usuario para un array de usuarios </span>
 
 <span style="color:#000000">de GitHub por sus nombres \(o podríamos buscar un array de bienes por sus “id”\, la lógica es </span>
 
-![](imagenes%5Cud26_59.png)
+![](imagenes/ud26_59.png)
 
 <span style="color:#000000">inmediatamente rechaza: “reject” con ese error\. Por ejemplo:</span>
 
-![](imagenes%5Cud26_60.png)
+![](imagenes/ud26_60.png)
 
 <span style="color:#000000">Aquí la segunda promesa se rechaza en dos segundos\. Esto lleva a un rechazo inmediato de </span>
 
@@ -736,7 +736,7 @@
 
 <span style="color:#000000">para los casos de “todo o nada”\, cuando necesitamos que todos los resultados sean </span>
 
-![](imagenes%5Cud26_61.png)
+![](imagenes/ud26_61.png)
 
 <span style="color:#000000">Promise\.allSettled solo espera que todas las promesas se resuelvan sin importar sus resultados\. </span>
 
@@ -750,11 +750,11 @@
 
 <span style="color:#000000">falla\, aún estaremos interesados en los otros\. Usemos Promise\.allSettled: </span>
 
-![](imagenes%5Cud26_62.png)
+![](imagenes/ud26_62.png)
 
 <span style="color:#000000">El results de la línea \(\*\) de arriba será: </span>
 
-![](imagenes%5Cud26_63.png)
+![](imagenes/ud26_63.png)
 
 <span style="color:#000000">Entonces para cada promesa obtendremos su estado y value/error\. </span>
 
@@ -794,11 +794,11 @@
 
 <span style="color:#000000">error\)\. Su sintaxis es: </span>
 
-![](imagenes%5Cud26_64.png)
+![](imagenes/ud26_64.png)
 
 <span style="color:#000000">Por ejemplo\, aquí el resultado será 1: </span>
 
-![](imagenes%5Cud26_65.png)
+![](imagenes/ud26_65.png)
 
 <span style="color:#000000">La primera promesa fue la más rápida\, por lo que se vuelve resultado\. En cuanto una promesa </span>
 
@@ -812,11 +812,11 @@
 
 <span style="color:#000000">en su propiedad errors\. La sintaxis es: </span>
 
-![](imagenes%5Cud26_66.png)
+![](imagenes/ud26_66.png)
 
 <span style="color:#000000">Por ejemplo\, aquí el resultado será 1: </span>
 
-![](imagenes%5Cud26_67.png)
+![](imagenes/ud26_67.png)
 
 <span style="color:#000000">La primera promesa fue la más rápida\, pero fue rechazada entonces devuelve el resultado de la </span>
 
@@ -824,7 +824,7 @@
 
 <span style="color:#000000">serán ignorados\. Aquí hay un ejemplo donde todas las promesas fallan: </span>
 
-![](imagenes%5Cud26_68.png)
+![](imagenes/ud26_68.png)
 
 <span style="color:#000000">propiedad errors del objeto AggregateError\. </span>
 
@@ -842,7 +842,7 @@
 
 <span style="color:#000000">Promise\.resolve\(value\) crea una promesa resuelta con el resultado value\. Tal como: </span>
 
-![](imagenes%5Cud26_69.png)
+![](imagenes/ud26_69.png)
 
 <span style="color:#000000">compatibilidad\, </span>
 
@@ -852,7 +852,7 @@
 
 <span style="color:#000000">para hacer una promesa de él y así el valor devuelto es siempre una promesa: </span>
 
-![](imagenes%5Cud26_70.png)
+![](imagenes/ud26_70.png)
 
 <span style="color:#000000">loadCached\(url\)\.then\(…\) </span>
 
@@ -860,7 +860,7 @@
 
 <span style="color:#000000">Promise\.reject\(error\) crea una promesa rechazada con error\. Tal como: </span>
 
-![](imagenes%5Cud26_71.png)
+![](imagenes/ud26_71.png)
 
 <span style="color:#000000">En la práctica este método casi nunca es usado\. </span>
 
@@ -924,7 +924,7 @@
 
 <span style="color:#000000">Introducción: callbacks\. </span>
 
-![](imagenes%5Cud26_72.png)
+![](imagenes/ud26_72.png)
 
 <span style="color:#000000">La función carga un script con el src dado\, y llama a callback\(err\) en caso de error o callback\(null\, </span>
 
@@ -936,7 +936,7 @@
 
 <span style="color:#000000">exitosa y rechaza con error en caso contrario\. Aquí está: </span>
 
-![](imagenes%5Cud26_73.png)
+![](imagenes/ud26_73.png)
 
 <span style="color:#000000">Como podemos ver\, la nueva función es un “wrapper” \(una función contenedora\) que envuelv</span>
 
@@ -952,7 +952,7 @@
 
 <span style="color:#000000">función contenedora \(wrapper\)\. </span>
 
-![](imagenes%5Cud26_74.png)
+![](imagenes/ud26_74.png)
 
 <span style="color:#000000">El código puede verse complicado\, pero es esencialmente lo mismo que escribimos arriba al </span>
 
@@ -976,7 +976,7 @@
 
 <span style="color:#000000">con el array de resultados del callback\. Esto es para callbacks con muchos argumentos\. </span>
 
-![](imagenes%5Cud26_75.png)
+![](imagenes/ud26_75.png)
 
 <span style="color:#000000">Como puedes ver es esencialmente lo mismo de antes\, pero resolve es llamado con solo uno o </span>
 
@@ -996,17 +996,17 @@
 
 <span style="color:#000000">Comencemos con la palabra clave async\. Puede ser ubicada delante de una función como aquí: </span>
 
-![](imagenes%5Cud26_76.png)
+![](imagenes/ud26_76.png)
 
 <span style="color:#000000">automáticamente\. Por ejemplo\, esta función devuelve una promesa resuelta con el resultado </span>
 
 <span style="color:#000000">de 1; Probémosla: </span>
 
-![](imagenes%5Cud26_77.png)
+![](imagenes/ud26_77.png)
 
 <span style="color:#000000">…Podríamos explícitamente devolver una promesa\, lo cual sería lo mismo:</span>
 
-![](imagenes%5Cud26_78.png)
+![](imagenes/ud26_78.png)
 
 <span style="color:#000000">Entonces\, async se asegura de que la función devuelva una promesa\, o envuelve las no promesas </span>
 
@@ -1014,13 +1014,13 @@
 
 <span style="color:#000000">que solo trabaja dentro de funciones async y es muy interesante\. </span>
 
-![](imagenes%5Cud26_79.png)
+![](imagenes/ud26_79.png)
 
 <span style="color:#000000">await hace que JavaScript espere hasta que la promesa responda y devuelve su resultado\. Aquí </span>
 
 <span style="color:#000000">hay un ejemplo con una promesa que resuelve en 1 segundo: </span>
 
-![](imagenes%5Cud26_80.png)
+![](imagenes/ud26_80.png)
 
 <span style="color:#000000">La ejecución de la función es pausada en la línea \(\*\) y se reanuda cuando la promesa responde\, </span>
 
@@ -1046,13 +1046,13 @@
 
 <span style="color:#000000">También debemos hacer que la función sea async para que aquellos funcionen\. </span>
 
-![](imagenes%5Cud26_81.png)
+![](imagenes/ud26_81.png)
 
 <span style="color:#000000">Bien limpio y fácil de leer\, ¿no es cierto? Mucho mejor que antes\. </span>
 
 <span style="color:#000000">Métodos de clase Async: Para declarar un método de clase async\, simplemente se le antepone </span>
 
-![](imagenes%5Cud26_82.png)
+![](imagenes/ud26_82.png)
 
 <span style="color:#000000"> _Manejo de Error _ </span>
 
@@ -1060,11 +1060,11 @@
 
 <span style="color:#000000">en caso de rechazo\, dispara un error\, tal como si hubiera una instrucción throw en aquella línea\. </span>
 
-![](imagenes%5Cud26_83.png)
+![](imagenes/ud26_83.png)
 
 <span style="color:#000000">…es lo mismo que esto:</span>
 
-![](imagenes%5Cud26_84.png)
+![](imagenes/ud26_84.png)
 
 <span style="color:#000000">En situaciones reales\, la promesa tomará algún tiempo antes del rechazo\. En tal caso habrá un </span>
 
@@ -1072,11 +1072,11 @@
 
 <span style="color:#000000">misma manera que con un throw normal: </span>
 
-![](imagenes%5Cud26_85.png)
+![](imagenes/ud26_85.png)
 
 <span style="color:#000000">En el caso de un error\, el control salta al bloque catch\. Podemos también envolver múltiples </span>
 
-![](imagenes%5Cud26_86.png)
+![](imagenes/ud26_86.png)
 
 <span style="color:#000000">Si no tenemos try\.\.catch\, entonces la promesa generada por el llamado de la función async f\(\) </span>
 
@@ -1084,7 +1084,7 @@
 
 <span style="color:#000000"> para manejarlo: </span>
 
-![](imagenes%5Cud26_87.png)
+![](imagenes/ud26_87.png)
 
 <span style="color:#000000">Si olvidamos añadir </span>
 

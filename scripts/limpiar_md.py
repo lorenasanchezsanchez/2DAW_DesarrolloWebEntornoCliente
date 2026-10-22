@@ -10,7 +10,7 @@ Qué hace (sin tocar el contenido de los bloques ``` ):
   1. Convierte el fichero a UTF-8 si está en UTF-16.
   2. Elimina las etiquetas <span ...> y </span>.
   3. Quita las barras de escape: \\, \\. \\( \\" ...
-  4. Cambia imagenes%5C por imagenes/ (rutas de imágenes).
+  4. Cambia imagenes/ por imagenes/ (rutas de imágenes).
   5. Convierte líneas _Título_ o __Título__ en encabezados (## por defecto).
   6. Quita espacios sobrantes (sangrías, finales de línea, líneas en blanco repetidas).
   7. Une líneas "__Nota: ...__" consecutivas en un aviso `!!! note`.
@@ -54,7 +54,7 @@ def partir_codigo(texto: str):
 def limpiar_prosa(t: str) -> str:
     t = re.sub(r"</?span[^>]*>", "", t)
     t = re.sub(ESCAPADOS, r"\1", t)
-    t = t.replace("%5C", "/")
+    t = t.replace("/", "/")
     t = re.sub(r"[ \t]+$", "", t, flags=re.M)
     t = re.sub(r"^[ \t]+(?=\S)", "", t, flags=re.M)
     return t

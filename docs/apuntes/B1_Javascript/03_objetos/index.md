@@ -965,10 +965,13 @@ Nota que multiplyNumeric no necesita devolver nada. Debe modificar el objeto en 
 
 P.D. Usa typeof para verificar si hay un número aquí.
 
- _[Abrir](https://plnkr.co/edit/7xbmJvXLyJXoSpHW?p=preview)_  _[ ](https://plnkr.co/edit/7xbmJvXLyJXoSpHW?p=preview)_  _[en](https://plnkr.co/edit/7xbmJvXLyJXoSpHW?p=preview)_  _[ ](https://plnkr.co/edit/7xbmJvXLyJXoSpHW?p=preview)_  _[entorno](https://plnkr.co/edit/7xbmJvXLyJXoSpHW?p=preview)_  _[ ](https://plnkr.co/edit/7xbmJvXLyJXoSpHW?p=preview)_  _[controlado](https://plnkr.co/edit/7xbmJvXLyJXoSpHW?p=preview)_  _[ ](https://plnkr.co/edit/7xbmJvXLyJXoSpHW?p=preview)_  _[con](https://plnkr.co/edit/7xbmJvXLyJXoSpHW?p=preview)_  _[ ](https://plnkr.co/edit/7xbmJvXLyJXoSpHW?p=preview)_  _[pruebas.](https://plnkr.co/edit/7xbmJvXLyJXoSpHW?p=preview)_ 
+
 
  ### Solución:
- ```javascript
+
+
+
+```javascript
  function multiplyNumeric(obj) {
   for (let key in obj) {
     if (typeof obj[key] === 'number') {
@@ -1148,8 +1151,6 @@ Las funciones de flecha son especiales: ellas no tienen su “propio” this. Si
 Esto es una característica especial de las funciones de flecha, útil cuando no queremos realmente un this separado sino tomarlo de un contexto externo. Más adelante en el capítulo Funciones de flecha revisadas las trataremos en profundidad.
 
 ## RESUMEN {.objetos-heading}
-
-
 
 * Las funciones que son almacenadas en propiedades de objeto son llamadas“métodos”.
   * Los método permiten a los objetos “actuar”, como object.doSomething().
