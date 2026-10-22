@@ -91,6 +91,436 @@ Podemos usar expresiones más complejas dentro de los corchetes:
 
 Los corchetes son mucho más potentes que la notación de punto. Permiten cualquier nombre de propiedad, incluso variables. Pero también es más engorroso escribirlos. Entonces, la mayoría de las veces, cuando los nombres de propiedad son conocidos y simples, se utiliza el punto. Y si necesitamos algo más complejo, entonces cambiamos a corchetes.
 
+
+
+
+# Propiedades Calculadas en JavaScript
+
+## Guía Completa
+
+Las propiedades calculadas (*Computed Properties*) permiten generar el nombre de una propiedad dinámicamente utilizando una expresión.
+
+```javascript
+const clave = 'nombre';
+
+const usuario = {
+  [clave]: 'Lorena'
+};
+```
+
+Resultado:
+
+```javascript
+{ nombre: 'Lorena' }
+```
+
+---
+
+# Problema que Resuelven
+
+Sin propiedades calculadas debes conocer el nombre de la propiedad al escribir el código.
+
+```javascript
+const usuario = {
+  nombre: 'Lorena'
+};
+```
+
+¿Y si el nombre llega desde una variable, un formulario o una API?
+
+---
+
+# Sintaxis
+
+```javascript
+const clave = 'nombre';
+
+const objeto = {
+  [clave]: 'Lorena'
+};
+```
+
+La expresión entre corchetes se evalúa.
+
+El resultado se convierte en el nombre de la propiedad.
+
+---
+
+# Sin Corchetes
+
+```javascript
+const clave = 'nombre';
+
+const objeto = {
+  clave: 'Lorena'
+};
+```
+
+Resultado:
+
+```javascript
+{
+  clave: 'Lorena'
+}
+```
+
+La propiedad se llama literalmente "clave".
+
+---
+
+# Con Corchetes
+
+```javascript
+const clave = 'nombre';
+
+const objeto = {
+  [clave]: 'Lorena'
+};
+```
+
+Resultado:
+
+```javascript
+{
+  nombre: 'Lorena'
+}
+```
+
+---
+
+# Qué Ocurre Internamente
+
+```javascript
+const clave = 'nombre';
+
+const objeto = {
+  [clave]: 'Lorena'
+};
+```
+
+JavaScript evalúa:
+
+```javascript
+clave
+```
+
+Obtiene:
+
+```javascript
+'nombre'
+```
+
+Y crea:
+
+```javascript
+{
+  nombre: 'Lorena'
+}
+```
+
+---
+
+# Expresiones Complejas
+
+Dentro de los corchetes puede haber cualquier expresión válida.
+
+```javascript
+const id = 7;
+
+const usuario = {
+  ['user_' + id]: 'Lorena'
+};
+```
+
+Resultado:
+
+```javascript
+{
+  user_7: 'Lorena'
+}
+```
+
+---
+
+# Uso con Template Strings
+
+```javascript
+const id = 25;
+
+const producto = {
+  [`producto_${id}`]: 'Portátil'
+};
+```
+
+Resultado:
+
+```javascript
+{
+  producto_25: 'Portátil'
+}
+```
+
+---
+
+# Varias Propiedades Dinámicas
+
+```javascript
+const campo1 = 'nombre';
+const campo2 = 'edad';
+
+const persona = {
+  [campo1]: 'Lorena',
+  [campo2]: 30
+};
+```
+
+Resultado:
+
+```javascript
+{
+  nombre: 'Lorena',
+  edad: 30
+}
+```
+
+---
+
+# Claves Numéricas
+
+```javascript
+const numero = 100;
+
+const datos = {
+  [numero]: 'valor'
+};
+```
+
+Resultado:
+
+```javascript
+{
+  '100': 'valor'
+}
+```
+
+Las claves de los objetos siempre son cadenas o símbolos.
+
+---
+
+# Uso con Symbols
+
+```javascript
+const id = Symbol('id');
+
+const usuario = {
+  [id]: 123
+};
+```
+
+Los símbolos generan propiedades únicas.
+
+---
+
+# Formularios
+
+Muy utilizado para capturar cambios de campos.
+
+```javascript
+const campo = 'email';
+const valor = 'correo@email.com';
+
+const usuario = {
+  [campo]: valor
+};
+```
+
+Resultado:
+
+```javascript
+{
+  email: 'correo@email.com'
+}
+```
+
+---
+
+# React: Caso Real
+
+```javascript
+setUsuario({
+  ...usuario,
+  [e.target.name]: e.target.value
+});
+```
+
+Si el input contiene:
+
+```html
+<input name="email" />
+```
+
+Se actualiza:
+
+```javascript
+usuario.email
+```
+
+---
+
+# Configuración Dinámica
+
+```javascript
+const entorno = 'produccion';
+
+const config = {
+  [`api_${entorno}`]: 'https://api.com'
+};
+```
+
+Resultado:
+
+```javascript
+{
+  api_produccion: 'https://api.com'
+}
+```
+
+---
+
+# Combinación con Spread
+
+```javascript
+const clave = 'edad';
+
+const persona = {
+  nombre: 'Lorena',
+  [clave]: 30
+};
+```
+
+Resultado:
+
+```javascript
+{
+  nombre: 'Lorena',
+  edad: 30
+}
+```
+
+---
+
+# Errores Comunes
+
+## Error 1
+
+```javascript
+const clave = 'nombre';
+
+const obj = {
+  clave: 'Lorena'
+};
+```
+
+No crea la propiedad nombre.
+
+Crea la propiedad clave.
+
+---
+
+# Error 2
+
+```javascript
+const obj = {
+  [undefined]: 'valor'
+};
+```
+
+Resultado:
+
+```javascript
+{
+  undefined: 'valor'
+}
+```
+
+Comprueba siempre el contenido de la variable.
+
+---
+
+# Diferencia entre Crear y Acceder
+
+Crear:
+
+```javascript
+const clave = 'nombre';
+
+const obj = {
+  [clave]: 'Lorena'
+};
+```
+
+Acceder:
+
+```javascript
+obj[clave]
+```
+
+Resultado:
+
+```javascript
+'Lorena'
+```
+
+---
+
+# Regla de Oro
+
+Sin corchetes:
+
+```javascript
+{
+  clave: valor
+}
+```
+
+La propiedad se llama literalmente:
+
+```javascript
+'clave'
+```
+
+Con corchetes:
+
+```javascript
+{
+  [clave]: valor
+}
+```
+
+La propiedad se llama como el valor almacenado en la variable.
+
+---
+
+# Resumen Final
+
+✅ Permiten crear propiedades dinámicas.
+
+✅ Utilizan la sintaxis `[expresion]`.
+
+✅ La expresión se evalúa antes de crear la propiedad.
+
+✅ Se usan mucho en React y formularios.
+
+✅ Admiten variables, concatenaciones, template strings y símbolos.
+
+✅ Son una característica fundamental para construir objetos de manera flexible.
+
+
+
+
+
+
+
 ## Atajo para valores de propiedad {.objetos-heading}
 
 En el código real, a menudo usamos variables existentes como valores de los nombres de propiedades. Por ejemplo:
@@ -124,6 +554,272 @@ Hay  una  pequeña  sorpresa  por  una  propiedad  especial  llamada  _	_ proto 
 ![](imagenes/UD23%20-%20Objetos_21.jpg)
 
 Como podemos ver en el código, se ignora la asignación de un valor primitivo 5.
+
+
+
+# __proto__ en JavaScript
+
+## ¿Qué es?
+
+`__proto__` es una propiedad interna que apunta al **prototipo** de un objeto.
+
+Gracias a ella, los objetos pueden heredar propiedades y métodos de otros objetos.
+
+```javascript
+const persona = {
+  nombre: 'Lorena'
+};
+
+console.log(persona.__proto__);
+```
+
+---
+
+# La cadena de prototipos
+
+Cuando accedes a una propiedad:
+
+```javascript
+persona.nombre
+```
+
+JavaScript busca:
+
+1. En el propio objeto.
+2. En su prototipo.
+3. En el prototipo del prototipo.
+4. Hasta llegar a `null`.
+
+Esto se llama **Prototype Chain**.
+
+---
+
+# Ejemplo sencillo
+
+```javascript
+const animal = {
+  respirar() {
+    console.log('Respirando');
+  }
+};
+
+const perro = {
+  nombre: 'Toby'
+};
+
+perro.__proto__ = animal;
+
+perro.respirar();
+```
+
+Resultado:
+
+```text
+Respirando
+```
+
+Aunque `perro` no tiene el método `respirar`, lo encuentra en su prototipo.
+
+---
+
+# Qué ocurre internamente
+
+```javascript
+perro.respirar()
+```
+
+JavaScript busca:
+
+```javascript
+perro.respirar
+```
+
+No existe.
+
+Entonces busca en:
+
+```javascript
+perro.__proto__
+```
+
+Y encuentra:
+
+```javascript
+animal.respirar
+```
+
+---
+
+# Todos los objetos tienen prototipo
+
+```javascript
+const obj = {};
+
+console.log(obj.__proto__);
+```
+
+Resultado aproximado:
+
+```javascript
+Object.prototype
+```
+
+Por eso todos los objetos disponen de métodos como:
+
+```javascript
+obj.toString();
+obj.hasOwnProperty('x');
+```
+
+---
+
+# Object.prototype
+
+Es el prototipo base de casi todos los objetos.
+
+```javascript
+const usuario = {};
+
+console.log(usuario.__proto__ === Object.prototype);
+```
+
+Resultado:
+
+```javascript
+true
+```
+
+---
+
+# ¿Por qué no se recomienda usar __proto__?
+
+Aunque funciona, hoy se considera una API heredada.
+
+Se recomienda utilizar:
+
+```javascript
+Object.getPrototypeOf(obj);
+```
+
+Para obtener el prototipo.
+
+Y:
+
+```javascript
+Object.setPrototypeOf(obj, proto);
+```
+
+Para modificarlo.
+
+---
+
+# Equivalencias
+
+Obtener prototipo:
+
+```javascript
+obj.__proto__
+```
+
+Equivale a:
+
+```javascript
+Object.getPrototypeOf(obj)
+```
+
+---
+
+Modificar prototipo:
+
+```javascript
+obj.__proto__ = animal;
+```
+
+Equivale a:
+
+```javascript
+Object.setPrototypeOf(obj, animal);
+```
+
+---
+
+# Funciones y prototipos
+
+Las funciones constructoras tienen una propiedad especial:
+
+```javascript
+function Persona() {}
+
+console.log(Persona.prototype);
+```
+
+No es lo mismo que:
+
+```javascript
+obj.__proto__
+```
+
+---
+
+# Diferencia importante
+
+```javascript
+Persona.prototype
+```
+
+Es el objeto que usarán las instancias como prototipo.
+
+Mientras que:
+
+```javascript
+instancia.__proto__
+```
+
+Es el prototipo real de esa instancia.
+
+---
+
+# Ejemplo
+
+```javascript
+function Persona() {}
+
+const lorena = new Persona();
+
+console.log(lorena.__proto__ === Persona.prototype);
+```
+
+Resultado:
+
+```javascript
+true
+```
+
+---
+
+# Resumen
+
+✅ `__proto__` apunta al prototipo de un objeto.
+
+✅ Permite la herencia prototípica.
+
+✅ JavaScript busca propiedades recorriendo la cadena de prototipos.
+
+✅ Todos los objetos suelen heredar de `Object.prototype`.
+
+✅ Actualmente es preferible usar:
+
+```javascript
+Object.getPrototypeOf()
+Object.setPrototypeOf()
+```
+
+✅ Relación clave:
+
+```javascript
+instancia.__proto__ === Constructor.prototype
+```
+
 
 ## La prueba de propiedad existente, el operador “in” {.objetos-heading}
 
@@ -227,11 +923,23 @@ Los objetos en JavaScript son muy poderosos. Aquí acabamos de arañar la superf
 
 Escribe el código, una línea para cada acción:
 
-Crea un objeto user vacío.
+- Crea un objeto user vacío.
 
 Agrega la propiedad name con el valor John. Agrega la propiedad surname con el valor Smith. Cambia el valor de name a Pete.
 
 Remueve la propiedad name del objeto.
+
+### Solución:
+
+```javascript
+
+const user = {};
+user.name = "John";
+user.surname = "Smith";
+user.name = "Pete";
+delete user.name;
+
+````
 
 ## Verificar los vacíos {.objetos-heading}
 
@@ -243,6 +951,24 @@ Debería funcionar así:
 let schedule = {};
 alert( isEmpty(schedule) ); // true
 schedule["8:30"] = "Hora de levantarse"; alert( isEmpty(schedule) ); // false
+```
+
+### Solución:
+
+
+```javascript
+let schedule = {};
+alert( isEmpty(schedule) ); // true
+schedule["8:30"] = "Hora de levantarse"; alert( isEmpty(schedule) ); // false
+```
+
+### Ejemplo de uso de la función isEmpty:
+
+```javascript
+let schedule = {};
+console.log(isEmpty(schedule)); // true
+schedule["8:30"] = "Hora de levantarse";
+console.log(isEmpty(schedule)); // false
 ```
 
 ## Multiplicar propiedades numéricas por 2 {.objetos-heading}
@@ -274,6 +1000,17 @@ Nota que multiplyNumeric no necesita devolver nada. Debe modificar el objeto en 
 P.D. Usa typeof para verificar si hay un número aquí.
 
  _[Abrir](https://plnkr.co/edit/7xbmJvXLyJXoSpHW?p=preview)_  _[ ](https://plnkr.co/edit/7xbmJvXLyJXoSpHW?p=preview)_  _[en](https://plnkr.co/edit/7xbmJvXLyJXoSpHW?p=preview)_  _[ ](https://plnkr.co/edit/7xbmJvXLyJXoSpHW?p=preview)_  _[entorno](https://plnkr.co/edit/7xbmJvXLyJXoSpHW?p=preview)_  _[ ](https://plnkr.co/edit/7xbmJvXLyJXoSpHW?p=preview)_  _[controlado](https://plnkr.co/edit/7xbmJvXLyJXoSpHW?p=preview)_  _[ ](https://plnkr.co/edit/7xbmJvXLyJXoSpHW?p=preview)_  _[con](https://plnkr.co/edit/7xbmJvXLyJXoSpHW?p=preview)_  _[ ](https://plnkr.co/edit/7xbmJvXLyJXoSpHW?p=preview)_  _[pruebas.](https://plnkr.co/edit/7xbmJvXLyJXoSpHW?p=preview)_ 
+
+ ### Solución:
+ ```javascript
+ function multiplyNumeric(obj) {
+  for (let key in obj) {
+    if (typeof obj[key] === 'number') {
+      obj[key] *= 2;
+    }
+  }
+}
+```
 
 # Referencias de objetos y copias {.objetos-heading}
 
