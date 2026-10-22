@@ -557,7 +557,7 @@ Como podemos ver en el código, se ignora la asignación de un valor primitivo 5
 
 
 
-# __proto__ en JavaScript
+# __ proto __ en JavaScript
 
 ## ¿Qué es?
 
