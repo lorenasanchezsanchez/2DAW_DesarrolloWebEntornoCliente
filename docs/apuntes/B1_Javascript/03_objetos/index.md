@@ -1181,6 +1181,41 @@ let user = makeUser();
 alert( user.ref.name ); // ¿Cuál es el resultado?
 ```
 
+
+## Solución:
+
+El resultado de ejecutar este código es un error (específicamente un TypeError: Cannot read properties of undefined (reading 'name')) si se ejecuta en modo estricto ('use strict'), que es el comportamiento por defecto en los entornos modernos de JavaScript (como los módulos de ES6).
+
+¿Por qué ocurre esto?
+El valor de this:
+La función makeUser() se está llamando como una función normal (makeUser()), y no como un método de un objeto (es decir, no se llama como algo.makeUser()).
+
+En una llamada de función normal en modo estricto, el valor de this es undefined.
+
+(Nota: Si estuviera en modo no estricto o "sloppy mode", this apuntaría al objeto global, que es window en el navegador, por lo que user.ref sería window y user.ref.name devolvería una cadena vacía "").
+
+1. Evaluación del objeto:
+Al crearse el objeto dentro de makeUser:
+```javascript
+
+return {
+  name: "John",
+  ref: this // 'this' es undefined
+};
+```
+
+2. La propiedad ref toma el valor de this, que es undefined. Por lo tanto, el objeto user resultante es:
+
+```javascript
+{
+  name: "John",
+  ref: undefined
+}
+```
+3. El acceso a la propiedad:
+Cuando intentas ejecutar user.ref.name, en realidad estás intentando hacer undefined.name, lo cual provoca un error en JavaScript porque no se pueden leer propiedades de undefined.
+
+
 ## Crea una calculadora {.objetos-heading}
 
 Crea un objeto calculator con tres métodos:
@@ -1246,6 +1281,35 @@ ladder.up().up().down().showStep().down().showStep(); // muestra 1 y luego 0
 Tal enfoque es ampliamente usado entre las librerías JavaScript.
 
  _[Abrir](https://plnkr.co/edit/qr6ASfJci9DEGyvi?p=preview)_  _[ ](https://plnkr.co/edit/qr6ASfJci9DEGyvi?p=preview)_  _[en](https://plnkr.co/edit/qr6ASfJci9DEGyvi?p=preview)_  _[ ](https://plnkr.co/edit/qr6ASfJci9DEGyvi?p=preview)_  _[entorno](https://plnkr.co/edit/qr6ASfJci9DEGyvi?p=preview)_  _[ ](https://plnkr.co/edit/qr6ASfJci9DEGyvi?p=preview)_  _[controlado](https://plnkr.co/edit/qr6ASfJci9DEGyvi?p=preview)_  _[ ](https://plnkr.co/edit/qr6ASfJci9DEGyvi?p=preview)_  _[con](https://plnkr.co/edit/qr6ASfJci9DEGyvi?p=preview)_  _[ ](https://plnkr.co/edit/qr6ASfJci9DEGyvi?p=preview)_  _[pruebas.](https://plnkr.co/edit/qr6ASfJci9DEGyvi?p=preview)_ 
+
+
+## Solución:
+
+Para conseguir que los métodos sean encadenables (lo que se conoce como method chaining), cada uno de los métodos (up, down y showStep) debe devolver el propio objeto this al final de su ejecución.
+
+Aquí tienes el objeto ladder modificado:
+
+```javascript
+
+let ladder = {
+  step: 0,
+  up() {
+    this.step++;
+    return this; // Devuelve el objeto para permitir el encadenamiento
+  },
+  down() {
+    this.step--;
+    return this; // Devuelve el objeto para permitir el encadenamiento
+  },
+  showStep() {
+    alert(this.step);
+    return this; // Devuelve el objeto para permitir el encadenamiento
+  }
+};
+
+// Ahora ya puedes encadenar las llamadas:
+ladder.up().up().down().showStep().down().showStep(); // Muestra 1 y luego 0
+```
 
 # Constructor, operador “new” {.objetos-heading}
 

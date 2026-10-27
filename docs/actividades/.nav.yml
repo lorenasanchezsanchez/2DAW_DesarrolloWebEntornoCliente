@@ -6,8 +6,8 @@
         - "Actividades": "actividades/B1_Javascript/02_funciones_bucles/02_act_funciones_bucles.md"
         - "Soluciones": "actividades/B1_Javascript/02_funciones_bucles/02_sol_act_funciones_bucles.md"
 
-   # - "Bloque 3: Objetos":
-   #     - "Actividades": B1_Javascript/03_objetos/03_act_objetos.md
+    - "Bloque 3: Objetos":
+        - "Actividades": B1_Javascript/03_objetos/03_act_objetos.md
    #     - "Soluciones": B1_Javascript/03_objetos/03_sol_act_objetos.md
    # - "Bloque 4: Arrays":
    #     - "Actividades": B1_Javascript/04_arrays/04_act_arrays.md
