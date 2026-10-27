@@ -36,7 +36,7 @@ genre: "Adventure"
 
 Crea la función **countProperties(obj)** que:
 1. Devuelva cuántas propiedades tiene un objeto.
-2. Liste todas sus claves usando for..in.
+2. Liste todas sus claves usando **for..in**    .
 
 Prueba con:
 
@@ -54,7 +54,7 @@ city: "Madrid"
 1. Crea un objeto **inventory** con varias propiedades, donde cada clave es un producto y el valor es
 la cantidad en stock.
 2. Recorre el objeto con **for..in** para mostrar el stock disponible de cada producto.
-3. Añade la función updateStock(item, quantity) que actualice el stock:
+3. Añade la función **updateStock(item, quantity)** que actualice el stock:
 - Si el producto existe, sume la cantidad.
 - Si no existe, cree la propiedad con ese valor.
 
