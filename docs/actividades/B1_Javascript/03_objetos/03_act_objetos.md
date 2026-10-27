@@ -1,4 +1,4 @@
-# Ejercicios de Objetos en JavaScript 
+# ACTIVIDAD 1: Objetos en JavaScript 
 
 ## Ejercicio 1. Verificación y actualización de propiedades con in
 
@@ -17,10 +17,10 @@ stock: 5
 2. Si "discount" no existe, añade la propiedad con valor 0.1 (10%).
 3. Recorre con for..in todas las propiedades y muÚstralas en consola.
 
-## Ejercicio 2. Duplicar valores numÚricos dinßmicamente
+## Ejercicio 2. Duplicar valores numéricos dinámicamente
 
-Escribe la función **doubleNumbers(obj)** que reciba un objeto y duplique ·nicamente sus
-propiedades numÚricas.
+Escribe la función **doubleNumbers(obj)** que reciba un objeto y dupliqueúnicamente sus
+propiedades numéricas.
 
 Prueba con este objeto:
 ```javascript
@@ -35,7 +35,9 @@ genre: "Adventure"
 ## Ejercicio 3. Contador de propiedades
 
 Crea la función **countProperties(obj)** que:
+
 1. Devuelva cuántas propiedades tiene un objeto.
+
 2. Liste todas sus claves usando **for..in**    .
 
 Prueba con:
@@ -63,3 +65,5 @@ Prueba con:
 updateStock("mouse", -2);
 updateStock("monitor", 4);
 ```
+
+
